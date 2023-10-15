@@ -157,24 +157,24 @@ namespace ListTasks
         {
 
                 string[] lines = File.ReadAllLines(filePath);
-                foreach (var line in lines)
+            string posit = "";
+            string negat = "";
+            foreach (var line in lines)
                 {
                     if (double.TryParse(line, out double num))
                     {
                         if (num > 0)
                         {
-                            Console.WriteLine($"Положительные: {num}");
+                        posit = posit + " " + num;
                         }
                         else if (num < 0)
                         {
-                            Console.WriteLine($"Отрицательные: {num}");
+                        negat = negat + " " + num;
                         }
                     }
-                    else
-                    {
-                        Console.WriteLine($"Числа: {line}");
-                    }
+ 
                 }
+            Console.WriteLine($"упорядоченные числа {posit} {negat}");
         }
 
         //2,4 и 8,9 идентичны 
